@@ -1,0 +1,11 @@
+1. How securely one will set up 3 tier application on azure 
+2. Difference between public IP/private 
+3. How 2 services will communicate with each other (db and middleware)
+4. How to reduce the size of docker image 
+5. Have you used python in azure function 
+6. How to make sure date persist even after container deleted 
+7. Explain the process of creating an image of an application and tagged it with v1 by setting it with jenkins pipeline 
+8. What things you will monitor while an application running (let say 3 tier application)
+9. How you have integrated Jfrog and jenkins 
+10. What sort of services you used in azure
+11. How to create n users in m number of linux machine
