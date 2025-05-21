@@ -1,0 +1,325 @@
+How can we list the information of the blocked devices(partitions, HDD) on linux?
+
+1. lsblk – List Block Devices
+
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE,MODEL
+
+lsblk -f
+
+2. blkid – Block Device Attributes
+
+sudo blkid
+
+3. fdisk -l – Partition Table Listing
+
+sudo fdisk -l
+
+
+how to check disk usage 
+
+df -h
+
+
+how to check the free memory usage
+free -h
+--------------------------------
+
+Suppose you have written a configuration file and applied terraform init, plan and apply and got an error terraform state file dosent found, how to handle this scenario
+
+❌ Error: Terraform state file doesn't exist
+or
+❌ Error: state file not found
+
+
+✅ 1. Check if terraform apply actually failed mid-way
+If the apply step failed before state was written, the terraform.tfstate file may not exist yet.
+
+In this case, no state exists — you can safely rerun terraform apply after fixing the underlying error.
+
+✅ 2. Check your working directory
+Make sure you're running Terraform commands in the correct directory that contains:
+
+Your .tf configuration files
+
+The .terraform folder (created by terraform init)
+
+Any partial or existing .tfstate files
+
+✅ 3. Check for remote backend configuration
+If you're using a remote backend like S3, Azure Blob, or GCS, the error may mean Terraform:
+
+Cannot access the remote state file.
+
+The backend is misconfigured.
+
+🔍 Check backend block in main.tf or backend.tf:
+hcl
+Copy
+Edit
+terraform {
+  backend "s3" {
+    bucket = "my-bucket"
+    key    = "state/terraform.tfstate"
+    region = "us-west-2"
+  }
+}
+🛠 Fix:
+Ensure the backend bucket/container exists.
+
+Validate your credentials.
+
+Run:
+
+
+terraform init -reconfigure
+This forces Terraform to reinitialize the backend.
+
+✅ 4. Try checking for a backup file
+If the state was lost or deleted accidentally, check for:
+
+
+terraform.tfstate.backup
+If it exists, you can restore it:
+
+
+cp terraform.tfstate.backup terraform.tfstate
+✅ 5. If no state exists and nothing is provisioned yet
+If this is your first run and Terraform hasn't provisioned anything:
+
+Simply run:
+
+
+terraform apply
+Terraform will generate a fresh terraform.tfstate.
+
+✅ 6. If you’ve manually deleted the state file
+If the infrastructure still exists but the state file is missing:
+
+You'll need to import existing resources back into Terraform:
+
+
+terraform import <resource_type>.<resource_name> <resource_id>
+E.g.:
+
+
+terraform import aws_instance.web i-0abcd1234ef5678gh
+
+
+| Scenario                              | Fix                                                          |
+| ------------------------------------- | ------------------------------------------------------------ |
+| First-time apply, state never created | Fix errors and re-run `terraform apply`                      |
+| State file manually deleted           | Use `terraform import` to rebuild state                      |
+| Remote backend misconfigured          | Run `terraform init -reconfigure`                            |
+| `.tfstate.backup` available           | Restore with `cp terraform.tfstate.backup terraform.tfstate` |
+| Wrong working directory               | Navigate to correct directory and retry                      |
+
+
+suppose we have reactjs frontend, node as backend and MongoDB as database. How we can start the docker in one command
+
+✅ Step-by-step:
+
+1. Create docker-compose.yml file
+
+https://github.com/shubham1507/DevOps-Interviews/blob/master/docker-compose.yml
+
+2. Ensure Your Project Structure Looks Like:
+
+project-root/
+├── docker-compose.yml
+├── backend/
+│   ├── Dockerfile
+│   └── (Node.js code)
+├── frontend/
+    ├── Dockerfile
+    └── (React code)
+
+3. Sample Dockerfile for Backend (backend/Dockerfile)
+
+FROM node:18
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 5000
+CMD ["npm", "start"]
+
+
+4. Sample Dockerfile for Frontend (frontend/Dockerfile)
+
+FROM node:18
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
+RUN npm install -g serve
+EXPOSE 3000
+CMD ["serve", "-s", "build"]
+
+5.  Start all services in one command
+
+docker-compose up --build
+
+6. how to access a running container
+
+docker exec -it <container_name_or_id> bash
+
+7. how to build an inmage from docker file
+
+docker build -t <image_name>:<tag> .
+
+8. how to map host port to container port?
+
+docker run -p <host_port>:<container_port> <image_name>
+docker run -d -p 8080:3000 mynodeapp
+
+9. In infrastructure if i want to destroy only specific 2 resource ec1, ec2 using terraform how to do that?
+terraform destroy -target=aws_instance.ec1 -target=aws_instance.ec2
+
+10. how to recreate tfstate file while infrastructure is running
+
+    1. Ensure Your Code Matches the Existing Infra
+    2. Run terraform init
+    3. Use terraform import for Each Resource
+        terraform import <resource_type>.<resource_name> <resource_id>
+    4. Verify the State
+        terraform state list
+    5. Run a Plan to Confirm
+        terraform plan
+
+11. What is terraform import?
+
+terraform import is a Terraform CLI command used to bring existing infrastructure (e.g., an EC2 instance, 
+S3 bucket, Azure VM, etc.) under Terraform management by adding it to the Terraform state file.
+
+🔹 It does NOT create or modify resources.
+🔹 It only updates the .tfstate file to recognize that Terraform now manages an existing real-world resource.
+
+terraform import <resource_type>.<resource_name> <resource_id>
+
+*******when the infra is running and we lost the tfstate file in that case we use terraform import 
+
+12. I have 2 environments dev and prod how i can manage it separately using single terraform code?
+
+To manage multiple environments (e.g., dev and prod) using a single Terraform codebase, the recommended and 
+cleanest way is to use:
+    1. Workspaces + Variable Overrides
+                  OR
+    2. Directory Structure (with shared modules)
+
+
+      Option 1: Using Terraform Workspaces (Best for smaller infra)
+
+      main.tf
+      variables.tf
+      outputs.tf
+      terraform.tfvars
+
+      Steps:
+            1. Initialize Terraform
+                terraform init
+
+            2. Create separate workspaces
+
+                terraform workspace new dev
+                terraform workspace new prod
+            
+            3. Use workspace in variables (e.g., inside main.tf or variables.tf):
+
+                variable "env" {
+                  default = terraform.workspace
+                          } 
+            4. Use the env variable in resource naming:
+
+                  resource "aws_s3_bucket" "my_bucket" {
+                      bucket = "myapp-${var.env}-bucket"
+                          }
+
+             5. Apply to dev environment
+
+                terraform workspace select dev
+                terraform apply -var-file=dev.tfvars
+
+             6. Apply to prod environment
+
+                terraform workspace select prod
+                terraform apply -var-file=prod.tfvars
+
+       Option 2: Separate Environment Folders (Best for complex setups)
+
+              Structure:
+
+              modules/
+                └── vpc/
+                    └── main.tf
+                envs/
+                  ├── dev/
+                  │   ├── main.tf
+                  │   └── terraform.tfvars
+                  └── prod/
+                      ├── main.tf
+                      └── terraform.tfvars
+
+                Inside envs/dev/main.tf:
+
+                  module "vpc" {
+                      source = "../../modules/vpc"
+                      cidr_block = var.cidr_block
+                    }
+
+                 Inside envs/dev/terraform.tfvars:   cidr_block = "10.0.0.0/16"
+
+                 Deploy:
+
+                 cd envs/dev
+                  terraform init
+                  terraform apply -var-file=terraform.tfvars
+
+                  cd ../prod
+                  terraform init
+                  terraform apply -var-file=terraform.tfvars
+
+
+13. what is modules in terraform why its important?
+
+In Terraform, a module is a reusable group of resources.
+Think of a module like a function in programming—you write it once, and you can use it multiple times 
+across environments or projects.
+
+      Example: What a Module Looks Like
+
+      modules/
+        └── vpc/
+            ├── main.tf
+            ├── variables.tf
+            └── outputs.tf
+
+      dev/
+          └── main.tf
+      prod/
+          └── main.tf
+
+14. what is terraform.lock.hcl file?
+
+    terraform.lock.hcl is the dependency lock file created by Terraform to record the exact versions of
+     providers (like AWS, Azure, etc.) used in your project.
+
+    🧠 Purpose:
+    Ensures consistent and repeatable builds.
+
+    Prevents different machines or CI/CD pipelines from using different versions of a provider.
+
+    Example terraform.lock.hcl content:
+
+        provider "registry.terraform.io/hashicorp/aws" {
+            version     = "5.16.2"
+            constraints = ">= 3.0.0"
+            hashes = [
+              "h1:xyzabc123...",
+              ...
+            ]
+          }
+
+    When is it created?---terraform init
+
+    Should you commit it to Git?
+      Yes, it should be version-controlled (like package-lock.json or Pipfile.lock) so your team uses 
+      the same provider versions.
