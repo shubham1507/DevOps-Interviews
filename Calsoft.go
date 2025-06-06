@@ -20,6 +20,10 @@ class C(A, B):  # C inherits from A and B
 obj = C()
 obj.test()
 
+print(C.__mro__)
+
+(<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+
 # how to create APIS in python diff between patch and put ? can we implement patch using put and vice versa ? if we can than why ceated 2 methods
 # what is the use of Load Balancer
 # what are routines and channels in go
