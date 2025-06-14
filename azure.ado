@@ -684,3 +684,19 @@ Feedback: Speakers invite comments for additional topics (e.g., Terraform, Kuber
 Date: Consolidated as of June 14, 2025.
 
 For further questions or topics, provide additional transcripts or specify requirements.
+
+
+1)	What exactly have you done in your current project?
+2)	How many pipelines have you created?
+3)	How many environments do you have in your project?
+4)	While deployment, how exactly do you maintain the approval process
+5)	Do you know azure board and have you worked on it
+6)	How is your team managing the assigned work
+7)	What is the way to analyze the static code?
+8)	Process to deploy a .net app in azure devops
+9)	Process to deploy a angular app in azure devops
+10)	What is service connection and how can we crate that?
+11)	Diff between service connection and service principe
+12)	Aware of azure resources such as App services and function apps?’
+13)	What is IAC?
+
