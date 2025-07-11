@@ -1,0 +1,104 @@
+Here is a **comprehensive list of interview questions** extracted from the final round interview conversation you provided, categorized by topic:
+
+---
+
+### 🔹 **1. General & Background**
+
+1. Can you briefly introduce yourself and summarize your IT experience?
+2. What was your role in blockchain-related projects?
+3. Which blockchain platforms have you worked on (e.g., Hyperledger)?
+4. What was your role in designing APIs or frontend in your blockchain project?
+5. How did you implement search functionality in Django, and what performance challenges did you face?
+
+---
+
+### 🔹 **2. Cloud Platforms (Azure, AWS, GCP)**
+
+6. Which cloud platforms have you worked on?
+7. What is **VNet Peering** in Azure?
+8. What is **Direct Connect** and how is it different from VNet peering?
+9. How would you **transfer data from on-premises to Azure Storage** (Blob/File)? Which Azure services would you use?
+10. Why would you choose **Service Connection** in Azure for such a task?
+11. What is the difference between **Azure Firewall** and **Network Security Groups (NSG)?**
+12. How would you **design a 3-tier e-commerce application** on Azure?
+13. What Azure services would you choose for frontend, backend, and database?
+14. How would you monitor Azure VMs’ CPU/memory metrics using **OpenTelemetry**?
+
+---
+
+### 🔹 **3. Jenkins & CI/CD**
+
+15. What kind of CI/CD pipelines have you implemented for Python or Java projects?
+16. What stages do you include in your Jenkins pipeline?
+17. How do you **trigger Jenkins jobs using GitHub webhooks**?
+18. How do you **pass secrets/configs in Jenkins securely**?
+19. How do you implement **manual approvals** in Jenkins pipeline before deployment?
+20. Have you worked with **parameterized builds** in Jenkins? How do you pass and manage parameters?
+21. Where do you pass artifact ID, environment, or version number in Jenkins job?
+22. How do you **integrate Jenkins with Ansible Tower**?
+23. How do you handle failure and logging in Jenkins-Ansible pipeline integrations?
+
+---
+
+### 🔹 **4. Ansible & Configuration Management**
+
+24. What tools have you used for configuration management?
+25. What is the difference between **infrastructure provisioning and configuration management** in your workflow?
+26. Why did you choose **Ansible over other tools like Chef or Puppet**?
+27. How do you structure Ansible playbooks and roles?
+28. How do you use variables and secrets in Ansible?
+29. How do you monitor Ansible job status using Ansible Tower?
+
+---
+
+### 🔹 **5. Docker & Containerization**
+
+30. How do you **mount a volume** in Docker using command-line?
+31. What is the difference between `ENTRYPOINT` and `CMD` in a Dockerfile?
+32. How would you optimize a large Docker image?
+33. What are best practices for reducing Docker image size (e.g., Alpine base image)?
+34. How would you containerize a Python API and deploy it to Kubernetes?
+
+---
+
+### 🔹 **6. Kubernetes**
+
+35. What is the purpose of the `kubectl drain` command?
+36. What Kubernetes experience do you have?
+37. How would you deploy an API to Kubernetes?
+
+---
+
+### 🔹 **7. Terraform**
+
+38. What is the difference between `count` and `for_each` in Terraform?
+39. In what scenarios would you use `count` vs. `for_each`?
+40. Why is it important to **store the Terraform state file remotely**?
+41. How does **locking** help in preventing state file conflicts in a team?
+42. Have you worked with multiple providers (e.g., AWS, Azure) in a single Terraform project?
+
+---
+
+### 🔹 **8. Observability & Monitoring**
+
+43. What observability tools have you used?
+44. How did you integrate **OpenTelemetry with AppDynamics**?
+45. What metrics did you collect from Hazelcast?
+46. Does OpenTelemetry provide dashboards?
+47. How do you configure AppDynamics to send email alerts?
+48. Can OpenTelemetry collect and forward Azure VM metrics?
+
+---
+
+### 🔹 **9. Soft Skills & Continuous Learning**
+
+49. How do you keep yourself updated with the latest DevOps trends?
+50. What platforms do you use for learning (e.g., Medium, Udemy, internal portals)?
+
+---
+
+Let me know if you'd like:
+
+* The **answers or sample answers** for these questions.
+* A categorized **PDF/Excel version**.
+* Or grouping them by **difficulty level (Beginner, Intermediate, Advanced)**.
