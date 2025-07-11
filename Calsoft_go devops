@@ -1,0 +1,77 @@
+Here is a **structured list of interview questions** extracted from the above technical interview transcript, categorized by topic for clarity and preparation:
+
+---
+
+### 🔹 **1. Experience & Role-based Questions**
+
+1. What are your current roles and responsibilities at your organization?
+2. What kind of automation are you doing in your current project?
+3. What is your experience with Hazelcast?
+4. What tools and technologies are you currently working with (e.g., Jenkins, Ansible, Groovy, Python)?
+5. What DevOps tools did you use in previous organizations (e.g., Octopus, Terraform, Azure DevOps)?
+6. What was your involvement in Go-based internal tools like bulk repo cleaner and SonarQube archiver?
+7. How long did you work with Golang? How would you rate yourself on a scale of 1 to 5?
+
+---
+
+### 🔹 **2. Domain Knowledge**
+
+8. What domains have your projects been in (e.g., banking, web, blockchain)?
+9. Do you have any experience setting up networking infrastructure like VPCs, load balancers, EC2 from scratch in AWS?
+
+---
+
+### 🔹 **3. Golang Basics**
+
+10. What are **goroutines** in Golang?
+
+---
+
+### 🔹 **4. Python / REST API Design**
+
+11. How would you design a **REST API client** in Python?
+12. What request types are supported in REST APIs besides GET and POST?
+13. Can you use **PUT** for partial updates?
+14. Can **PATCH** be used for full updates?
+15. What’s the difference between **PUT** and **PATCH** in REST APIs?
+16. What is the difference between **HTTP 401** and **403** status codes?
+
+---
+
+### 🔹 **5. Infrastructure & Networking**
+
+17. What is the use of a **load balancer**?
+18. Which **operating systems** have you worked on (e.g., RHEL, Ubuntu)?
+19. If **ping works** but **SSH does not**, what could be the reasons?
+20. Which **port does SSH** use by default?
+
+---
+
+### 🔹 **6. Terraform / IaC**
+
+21. What is the purpose of **main.tf** in Terraform?
+22. Have you used **Terraform for multi-cloud setup** (e.g., Azure, AWS, GCP)?
+
+---
+
+### 🔹 **7. Linux / SSH Troubleshooting**
+
+23. What are some troubleshooting steps if `ping` works but SSH fails?
+24. What could be the reason SSH gives errors despite correct credentials?
+
+---
+
+### 🔹 **8. Python Programming & OOP**
+
+25. What will be the output of this **Python shallow copy** dictionary mutation?
+26. What will be the output of **multiple inheritance** when method names conflict?
+27. Explain **method resolution order (MRO)** in Python with class inheritance.
+
+---
+
+Let me know if you want:
+
+* A PDF or Excel version of this list,
+* Sample **answers/explanations** to these questions,
+* Grouped by **difficulty level**, or
+* Mapped to **specific job roles** (e.g., DevOps Engineer, Backend Engineer).
