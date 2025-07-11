@@ -1,0 +1,73 @@
+Here is a **structured list of interview questions** extracted from the transcript above, categorized by topic and type for clarity and preparation:
+
+---
+
+### 🔹 **1. CI/CD Pipeline**
+
+1. Can you describe the CI/CD pipeline in your project and how applications are deployed?
+2. What tools do you use in your CI/CD workflow (e.g., Jenkins, Azure DevOps, AWS CodeBuild)?
+3. What are the steps involved in **continuous integration**?
+4. How is your Jenkins pipeline triggered — via **webhooks**, **cron**, or both?
+5. Do you schedule builds periodically using **cron jobs** (e.g., every Friday)?
+6. What are the **build environments** used in Jenkins (e.g., Linux, Windows)?
+7. Who configures the Jenkins build agents — you or another team?
+
+---
+
+### 🔹 **2. Continuous Deployment**
+
+8. What is your **deployment strategy** (e.g., staging → pre-prod → prod)?
+9. Where do you **store application artifacts** (e.g., JFrog Artifactory, Nexus)?
+10. What deployment tools do you use (e.g., Octopus Deploy)?
+11. Is deployment **manual or automated** in production?
+12. Do you follow a **change request process** for production deployment?
+13. Do you perform deployments during **non-business hours**?
+14. How do you handle **rollback strategies** during failed deployments?
+15. How are **bootstrap scripts** executed on fresh instances during deployment?
+16. What actions are taken to prevent downtime or user disruption during production deployment?
+
+---
+
+### 🔹 **3. Docker & Artifacts**
+
+17. Are you using **Docker images** for deployment?
+18. Why do you use **JFrog Artifactory** instead of Docker Hub?
+19. How do you **build and push Docker images** in your CI pipeline?
+20. Do you deploy Docker images to **VMs or Kubernetes clusters**?
+
+---
+
+### 🔹 **4. Programming (Python)**
+
+21. How do you **rate yourself** in Python programming (out of 5)?
+22. Can you write a Python program to **find the maximum subarray sum**?
+23. What algorithm would you use to solve the maximum subarray problem?
+24. Can you write a Python program to **check if a string is a palindrome**?
+25. Can you implement **reverse functionality manually** (without using slicing `[::-1]` or built-in `reverse()`)?
+26. Can you write a **custom reverse function** using a `for` loop?
+
+---
+
+### 🔹 **5. DevOps Awareness & Process**
+
+27. What do you understand by the **deployment lifecycle**?
+28. What precautions do you take while deploying in **production environments**?
+29. Are you familiar with the **approval workflow** for production deployments?
+30. How do you ensure **rollback** in case of deployment failure?
+
+---
+
+### 🔹 **6. Role Expectations**
+
+31. What percentage of the role involves **development vs DevOps**?
+32. Are you comfortable working in a **Python-heavy development role**?
+33. Do you have awareness of **design patterns and system design** in development?
+
+---
+
+Let me know if you would like:
+
+* **Model answers** for any of these questions
+* A **PDF/Excel export**
+* Categorization by **difficulty level**
+* Or a **mock interview sheet** for practice.
