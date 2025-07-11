@@ -1,0 +1,84 @@
+Here is a structured list of **interview questions** extracted from the above transcript, categorized by topic:
+
+---
+
+### **1. Introduction & Experience**
+
+* Please introduce yourself and explain your roles and responsibilities.
+* What DevOps tools and cloud platforms have you worked with overall?
+* Which tools are you most confident with in infrastructure automation?
+
+---
+
+### **2. Terraform & Infrastructure as Code (IaC)**
+
+* Why did you choose Terraform over ARM templates (Azure) or CloudFormation (AWS)?
+* What are the key benefits that differentiate Terraform from other IaC tools?
+* How do you manage and secure the Terraform state file?
+* What is the term used for storing the Terraform state file remotely?
+* In Azure, which service is used to store the Terraform backend?
+
+---
+
+### **3. Python Automation**
+
+* What kind of automation have you implemented using Python?
+* Can you explain a specific use case where you used GitHub API and SonarQube API for automation?
+
+---
+
+### **4. Cloud Platforms**
+
+* Which cloud platforms have you worked on?
+* What are internet gateways and NAT gateways in AWS?
+* What Azure services have you worked with?
+* What kind of infrastructure onboarding have you done in Azure?
+
+---
+
+### **5. Containerization & Kubernetes**
+
+* Your client has a monolithic app hosted on a VM and wants to containerize it. What would be your high-level approach?
+* How would you containerize and deploy it using Docker and Azure App Services or Azure Functions?
+* What is a Helm chart? Have you used Helm charts in Kubernetes deployments?
+* If Ingress is configured in AKS and backend services are exposed via ClusterIP, but the application is still inaccessible, what might be missing?
+* What step is required to make the application accessible externally (DNS entry)?
+* What layer does an Application Load Balancer (ALB) operate at in the OSI model?
+* What additional functionality can be used to enhance security on the ALB or Azure Application Gateway?
+* What is WAF (Web Application Firewall)? Have you used it?
+
+---
+
+### **6. Ansible & CI/CD**
+
+* What kind of Ansible-based automation have you implemented?
+* Explain your usage of Ansible roles, variables, and vaults in Jenkins-triggered pipelines.
+* How is Ansible Tower integrated with your Jenkins and Ansible workflows?
+
+---
+
+### **7. Groovy & Jenkins Pipelines**
+
+* Can you automate Kubernetes cluster creation and upgrades using Groovy?
+* Describe how you would write a Jenkins pipeline in Groovy to automate cluster provisioning (with pipeline stages and tasks).
+* What plugins or tools would you use to interact with Kubernetes inside Jenkins?
+
+---
+
+### **8. Kubernetes Networking & Troubleshooting**
+
+* What role does the Ingress controller play in Kubernetes networking?
+* What is CCM (Cloud Controller Manager) and how does it relate to LoadBalancers in Kubernetes?
+* What are some common troubleshooting steps if an application exposed via Ingress is not reachable?
+* How do you check the health/status of Kubernetes services and pods?
+
+---
+
+### **9. Security & Best Practices**
+
+* What best practices would you implement to secure client requests reaching an L7 Load Balancer or Application Gateway?
+* What is the purpose of introducing WAF (Web Application Firewall)?
+
+---
+
+Let me know if you'd like these questions compiled into a Word/PDF document or grouped by difficulty (e.g., beginner/intermediate/advanced).
