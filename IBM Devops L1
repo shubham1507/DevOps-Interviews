@@ -1,0 +1,51 @@
+Here is a structured list of **interview questions** extracted from the transcript above, categorized by topic:
+
+---
+
+### 🔹 **1. General Experience**
+
+1. Is your background primarily in Python or framework development?
+2. What is your level of exposure to Docker and Kubernetes?
+3. Have you managed existing environments or created infrastructure from scratch using Terraform?
+
+---
+
+### 🔹 **2. Docker & Kubernetes**
+
+4. What sort of Kubernetes-related work have you done (e.g., troubleshooting pods, AKS, IKS)?
+5. What is your experience working with Docker?
+
+---
+
+### 🔹 **3. Terraform – Concepts & Commands**
+
+6. What is Terraform and how does it work?
+7. What does the `terraform init` command do?
+8. What is a `terraform.tfstate` file and how does it work?
+9. When and how is the `tfstate` file created?
+10. Why is it important to maintain the `tfstate` file?
+
+---
+
+### 🔹 **4. Terraform – Practical Implementation**
+
+11. Have you written Terraform scripts from scratch for different environments (e.g., staging, production)?
+12. Can you show how to create a **Virtual Machine** using Terraform?
+13. What provider did you use while writing the Terraform script?
+14. What resources are required to create a VM (e.g., resource group, virtual network, subnet)?
+15. What Terraform attributes are necessary for VM creation (e.g., VM size/type, region, address range)?
+
+---
+
+### 🔹 **5. Hands-on Task**
+
+16. Can you share your screen and demonstrate creating a VM with Terraform?
+17. Can you explain the code you wrote after showing the Terraform configuration?
+
+---
+
+Let me know if you'd like:
+
+* These questions with **sample answers**,
+* A **PDF or Word version**,
+* Or categorized by **difficulty level (Beginner, Intermediate, Advanced)** for better interview prep.
