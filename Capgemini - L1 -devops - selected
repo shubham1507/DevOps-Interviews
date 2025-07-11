@@ -1,0 +1,106 @@
+Here is a **comprehensive list of interview questions** extracted from the above transcript, categorized by topic:
+
+---
+
+### 🔹 **General Experience & Background**
+
+1. Can you summarize your overall IT experience?
+2. How many years of DevOps experience do you have?
+3. Apart from DevOps, which technologies have you worked on?
+
+---
+
+### 🔹 **Cloud Platforms**
+
+4. Which cloud platforms are you most comfortable with: GCP, Azure, or AWS?
+5. What services have you used in Azure and AWS?
+6. Have you configured AppDynamics and telemetry integrations?
+
+---
+
+### 🔹 **CI/CD – Jenkins**
+
+7. What kind of Jenkins pipelines have you worked on: declarative or scripted?
+8. What’s the difference between declarative and scripted pipelines in Jenkins?
+9. Explain the process/stages of your current Jenkins pipeline.
+10. Where do you write Groovy scripts for Jenkins?
+11. What is a shared library in Jenkins and how did you use it?
+12. How do you configure a Jenkins job to trigger on a Git commit?
+13. How do you set up GitHub webhooks with Jenkins?
+14. How do you schedule a Jenkins job to run at 2 PM daily? (cron syntax expected)
+15. Have you created parameterized builds in Jenkins? How do you pass values like API name/version?
+16. What types of parameters can you configure in a Jenkins job?
+17. Where do you store Jenkins credentials securely?
+18. How do you pass secrets/keys to Jenkins jobs?
+19. What is the use of a secret file in Jenkins?
+
+---
+
+### 🔹 **Git & SCM**
+
+20. What is the difference between `git merge` and `git rebase`?
+21. Have you used Git cherry-pick? What is its purpose?
+
+---
+
+### 🔹 **Infrastructure as Code (IaC) – Terraform**
+
+22. What is your experience with Terraform?
+23. How do you manage Terraform deployments in multi-cloud environments?
+
+---
+
+### 🔹 **Monitoring & Observability**
+
+24. How have you used AppDynamics in your current project?
+25. How do you capture Hazelcast metrics in AppDynamics using OpenTelemetry?
+26. Why did you automate Hazelcast config changes with Jenkins pipelines?
+
+---
+
+### 🔹 **Security Tools & Static Analysis**
+
+27. Have you worked with code quality and security scanning tools like SonarQube or Mend?
+28. What is the purpose of the Mend CLI tool?
+29. How do you pass secret keys or tokens for Mend scans in Jenkins?
+30. At what pipeline stage do you integrate security scans?
+
+---
+
+### 🔹 **Ansible**
+
+31. What features of Ansible do you use?
+32. What are six key features of Ansible?
+33. What is Ansible Galaxy?
+34. What are the basic components of an Ansible playbook (YAML)?
+35. How do you structure your Ansible playbooks and roles?
+36. What are the common variable files (`vars`) and secrets used?
+
+---
+
+### 🔹 **Docker**
+
+37. What is a Dockerfile?
+38. How do you build a Docker image from a Dockerfile?
+39. What is the command to build a Docker image?
+40. What is the Docker container lifecycle?
+41. How do you access a running container?
+42. What is Docker Compose, and when would you use it?
+43. How do you run multiple containers using Docker Compose?
+
+---
+
+### 🔹 **Kubernetes**
+
+44. Have you deployed applications to Kubernetes?
+45. How would you deploy an API to a Kubernetes environment?
+46. What are the key stages of creating a pipeline that deploys an API to Kubernetes?
+47. What is containerization and why is it useful?
+
+---
+
+Let me know if you'd like:
+
+* A **PDF/Word export** of these questions,
+* Answers/solutions to each of them,
+* Or if you want them categorized by **difficulty level** (beginner, intermediate, expert).
