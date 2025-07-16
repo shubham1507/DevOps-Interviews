@@ -1,0 +1,88 @@
+#Vishal.Bande@external.t-systems.com #Priyanshu.Shrivastava@t-systems.com
+
+
+Here is the list of **interview questions** asked by **\[Speaker 1]**, categorized by topic for clarity:
+
+---
+
+### ✅ **General Experience & Role**
+
+1. Tell me something about your experience in DevOps.
+2. Which tool stacks are you working upon?
+3. What are your roles and responsibilities as an SRE in your current organization?
+4. If I would ask you to rate yourself in cloud (AWS, GCP, Azure), Kubernetes, automation, and CI/CD, how much will you rate yourself on a scale of 1 to 5?
+5. Which CI/CD tool are you more comfortable with?
+6. You have relevant DevOps experience for 4 years and development experience for 3 years, right?
+
+---
+
+### ☁️ **Cloud (AWS, Azure, GCP)**
+
+7. Can you explain your current cloud architecture and the services you are working on?
+8. What is the general flow of your application deployment in the cloud?
+9. You have an EC2 instance in a private subnet and want to access it from outside. What will be your approach?
+10. Assume you are an architect — tell me the basic steps you will take to design a cloud-based architecture.
+11. What are the differences between a **Security Group** and a **NACL** in AWS?
+12. Assume you have:
+
+    * Account A: hosting an application on EC2 (North Virginia)
+    * Account B: S3 bucket with some objects
+      The application in Account A needs to access objects from Account B's S3.
+      What steps will you follow to implement this?
+13. Have you heard of **Assume Roles** in AWS?
+14. In which cloud are you most comfortable?
+15. Are you aware of AWS services?
+
+---
+
+### 🧩 **Kubernetes**
+
+16. How comfortable are you with Kubernetes?
+17. If you want to troubleshoot an issue in Kubernetes, what would be your first step?
+18. A pod is in **CrashLoopBackOff** or **Error** state — what command will you use to investigate?
+19. Explain the **basic Kubernetes architecture**.
+20. What are the components in the **master node** and **worker node** in Kubernetes?
+21. What are **services** in Kubernetes?
+
+---
+
+### 🛠️ **Infrastructure as Code – Terraform**
+
+22. Are you writing or managing Terraform code?
+23. We are maintaining the Terraform state file in backend storage. If both of us run `terraform plan` at the same time, what will happen?
+24. What is the difference between **provider** and **provisioner** in Terraform?
+25. Can you share a basic Terraform code to:
+
+    * Launch an instance
+    * Attach security groups with inbound/outbound rules
+26. How do you define **ingress** and **egress** rules in Terraform?
+27. Can you describe your **Terraform file structure** (main.tf, variables.tf, etc.)?
+
+---
+
+### 🐳 **Docker**
+
+28. If you want to **reduce the size of a Docker image**, how will you do that?
+29. What types of **networking** are used in Docker?
+
+---
+
+### 🤖 **Ansible**
+
+30. Why is Ansible called **agentless**?
+31. Have you heard of **facts** in Ansible? What are they used for?
+32. Is `gather_facts` a conditional or optional argument?
+
+---
+
+### 📊 **Monitoring & Observability**
+
+33. What observability/monitoring tools have you used?
+34. Do you know how to **trace an issue** using a monitoring tool?
+35. Have you created **custom metrics** for AppDynamics or any other tool?
+36. Have you worked with **otel (OpenTelemetry)**?
+37. Have you created a **otel.yaml** configuration?
+
+---
+
+Let me know if you'd like these converted into a **Q\&A format** with model answers or used for **mock interview preparation**.
