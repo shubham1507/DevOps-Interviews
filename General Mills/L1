@@ -1,0 +1,156 @@
+Cloud Knowledge / AWS / Azure
+
+1. How good are you with AWS? How much is your experience with AWS?
+
+
+2. What all services in Azure have you worked on?
+
+
+3. Let’s say we want to build a website and we do not have cloud presence. What are the things we should consider while building the cloud account and cloud infrastructure?
+
+
+
+
+---
+
+Design Decisions (VM vs Container vs Serverless / App Service vs AKS)
+
+4. How will you decide whether the application should be containerized, VM-based, or serverless?
+
+
+5. Azure has App Service and AKS — what parameters will you consider to decide which one to use?
+
+
+6. App Service also supports autoscaling, so why would you still choose AKS?
+
+
+7. What other components would you set up to make this architecture work on cloud?
+
+
+
+
+---
+
+Global / Regional Architecture & Networking
+
+8. Consider your application is used across the globe — how will you design the network?
+
+
+9. Have you worked on setting up Azure Kubernetes Service (AKS) yourself or was it done by another team?
+
+
+10. Have you worked on load balancers in Azure?
+
+
+11. If I am an end user, how does traffic flow from the user to your application?
+
+
+12. How many load balancers will be involved, and how will routing take place?
+
+
+13. What is the difference between a Network Load Balancer and an Application Load Balancer?
+
+
+14. In OSI layer terms, which layer does NLB work on and which layer does ALB work on?
+
+
+15. Can we use a Network Load Balancer in place of an Application Load Balancer? Why or why not?
+
+
+
+
+---
+
+HashiCorp Vault / Secret Management
+
+16. Have you worked on HashiCorp Vault or Azure Secret Manager?
+
+
+17. Can you brief your experience with Vault? What have you worked on?
+
+
+18. Have you set up HashiCorp Vault yourself or was it provided by another team?
+
+
+19. When the Vault token expires, what do you do? How is it renewed?
+
+
+
+
+---
+
+Terraform – Usage, Best Practices, Drift
+
+20. What is your experience with Terraform? How much have you worked on it?
+
+
+21. What steps do you follow to make Terraform enterprise-ready?
+
+
+22. Are you using Terraform Enterprise or open-source?
+
+
+23. What is this TOFU version of Terraform? Explain.
+
+
+24. Why do you run Terraform locally on VMs instead of integrating with CI/CD?
+
+
+25. Where is your Terraform state file stored?
+
+
+26. If the state file contains cloud passwords and secrets, is storing it in GitLab a good practice? Why?
+
+
+27. If someone creates or deletes resources manually from the cloud console, what happens when you run Terraform apply?
+
+
+28. What are the best practices you follow for Terraform drift management?
+
+
+29. Have you ever encountered a drift issue and how did you fix it?
+
+
+
+
+---
+
+Observability / Monitoring / AppDynamics / OpenTelemetry
+
+30. I see on your resume that you configured Hazelcast with OpenTelemetry and AppDynamics — can you walk us through how you configured it?
+
+
+31. Is the instrumentation Auto-instrumentation or Manual-instrumentation?
+
+
+32. If there are 5 applications to onboard to AppDynamics, how do you onboard them? Is it manual or automated?
+
+
+33. What does your automation pipeline for AppDynamics onboarding do?
+
+
+34. If one application is Java and another is .NET, will the APD agent be the same or different? Why?
+
+
+35. Is AppDynamics agent push-based or pull-based?
+
+
+36. Are you only responsible for installing agents, or also for configuring monitoring, alerting, dashboards?
+
+
+37. Can you share one incident where AppDynamics helped you diagnose an issue and how you troubleshot it?
+
+
+38. What is the core strength of AppDynamics? Why do we use it?
+
+
+
+
+---
+
+Miscellaneous / Role Fit
+
+39. Do you have any questions for us?
+
+
+40. (Their question when you asked about expectations) The bare minimum expectations from the role — but this wasn’t your question.
