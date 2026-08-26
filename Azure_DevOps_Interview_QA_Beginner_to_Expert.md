@@ -283,6 +283,12 @@ Use least-privilege RBAC, protected branches, PR policies, required
 reviews, secure authentication, secret scanning, audit logs and
 restricted service identities.
 
+I secure Azure Repos using a defense-in-depth approach. First, I implement least-privilege access using Azure DevOps groups and repository or branch-level permissions. I protect critical branches such as main using branch policies, requiring pull requests, at least two reviewers, build validation, status checks and comment resolution. I restrict bypass and force-push permissions to a very small administrative group.
+
+For source-code security, I enable secret scanning and push protection, along with dependency and code scanning where available. I never store credentials in the repository; secrets are kept in Azure Key Vault or appropriate secure pipeline mechanisms.
+
+For CI/CD, I use dedicated service identities with only the Azure RBAC permissions required by the pipeline rather than personal accounts or subscription-level Owner permissions. Finally, I enable Azure DevOps auditing and monitor permission changes, branch-policy changes and other security-sensitive activities. This gives us least privilege, code-review controls, secret protection, secure deployments and traceability.”
+
 ### 15. Monorepo vs multi-repo: when would you use each?
 
 A monorepo simplifies atomic changes and shared tooling across tightly
