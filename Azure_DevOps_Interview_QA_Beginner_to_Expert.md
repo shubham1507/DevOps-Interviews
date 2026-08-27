@@ -598,12 +598,194 @@ Example:
 ``` yaml
 condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
 ```
+### How do you conditionally execute a stage in Azure DevOps?
+
+In Azure DevOps YAML pipelines, we use the `condition:` property to control whether a stage should execute.
+
+By default, a stage runs only when its dependencies complete successfully.
+
+1. Run a stage only when the previous stage succeeds:
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildApp
+    steps:
+    - script: echo "Building application"
+
+- stage: Deploy
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeployApp
+    environment: dev
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying application"
+
+2. Run a stage only for the main branch:
+
+stages:
+- stage: DeployProd
+  condition: and(
+    succeeded(),
+    eq(variables['Build.SourceBranch'], 'refs/heads/main')
+  )
+  jobs:
+  - deployment: Deploy
+    environment: production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to production"
+
+3. Run a stage based on a variable:
+
+variables:
+  deployToProd: true
+
+stages:
+- stage: DeployProd
+  condition: and(
+    succeeded(),
+    eq(variables['deployToProd'], 'true')
+  )
+  jobs:
+  - deployment: Deploy
+    environment: production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to production"
+
+Common condition functions:
+
+succeeded()       → Previous dependencies succeeded
+failed()          → Previous dependencies failed
+always()          → Run regardless of previous result
+succeededOrFailed() → Run if previous stages succeeded or failed
+canceled()        → Pipeline was canceled
+eq()              → Compare two values
+and()             → All conditions must be true
+or()              → At least one condition must be true
+not()             → Negate a condition
+
+Example:
+
+condition: and(
+  succeeded(),
+  eq(variables['Build.SourceBranch'], 'refs/heads/main')
+)
+
+This means:
+
+"Run this stage only if the previous stages succeeded AND the current branch is main."
+
+### Interview Answer
+
+"To conditionally execute a stage in Azure DevOps, we use the `condition` property. Conditions can use built-in functions such as `succeeded()`, `failed()`, `always()`, `eq()`, `and()`, and `or()`. For example, we can configure a production deployment stage to run only when the build succeeds and the pipeline is running from the main branch."
+
+Easy way to remember:
+
+`condition:` → Controls WHEN a stage runs.
 
 ### 48. How do you pass output variables between jobs or stages?
+In Azure DevOps YAML pipelines, we use the `condition:` property to control whether a stage should execute.
 
-Set a variable with `isOutput=true`, give the producing step a `name`,
-then reference it through the producing job/stage's `outputs` using
-`dependencies` or `stageDependencies`.
+By default, a stage runs only when its dependencies complete successfully.
+
+1. Run a stage only when the previous stage succeeds:
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildApp
+    steps:
+    - script: echo "Building application"
+
+- stage: Deploy
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeployApp
+    environment: dev
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying application"
+
+2. Run a stage only for the main branch:
+
+stages:
+- stage: DeployProd
+  condition: and(
+    succeeded(),
+    eq(variables['Build.SourceBranch'], 'refs/heads/main')
+  )
+  jobs:
+  - deployment: Deploy
+    environment: production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to production"
+
+3. Run a stage based on a variable:
+
+variables:
+  deployToProd: true
+
+stages:
+- stage: DeployProd
+  condition: and(
+    succeeded(),
+    eq(variables['deployToProd'], 'true')
+  )
+  jobs:
+  - deployment: Deploy
+    environment: production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to production"
+
+Common condition functions:
+
+succeeded()       → Previous dependencies succeeded
+failed()          → Previous dependencies failed
+always()          → Run regardless of previous result
+succeededOrFailed() → Run if previous stages succeeded or failed
+canceled()        → Pipeline was canceled
+eq()              → Compare two values
+and()             → All conditions must be true
+or()              → At least one condition must be true
+not()             → Negate a condition
+
+Example:
+
+condition: and(
+  succeeded(),
+  eq(variables['Build.SourceBranch'], 'refs/heads/main')
+)
+
+This means:
+
+"Run this stage only if the previous stages succeeded AND the current branch is main."
+
+### Interview Answer
+
+"To conditionally execute a stage in Azure DevOps, we use the `condition` property. Conditions can use built-in functions such as `succeeded()`, `failed()`, `always()`, `eq()`, `and()`, and `or()`. For example, we can configure a production deployment stage to run only when the build succeeds and the pipeline is running from the main branch."
+
+Easy way to remember:
+
+`condition:` → Controls WHEN a stage runs.
 
 ### 49. How do you reuse YAML across multiple repositories?
 
