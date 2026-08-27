@@ -481,10 +481,108 @@ security/governance controls and make pipeline maintenance easier.
 
 ### 45. What is the difference between parameters and variables?
 
-Parameters are typed and primarily resolved during template parsing,
-making them useful for controlling pipeline structure. Variables are
-mostly string values and can participate in runtime execution; some can
-be set dynamically or stored as secrets.
+### Difference between Parameters and Variables in Azure DevOps
+
+Parameters and variables are both used to store values in Azure DevOps YAML pipelines, but they differ mainly in when they are evaluated and how they are used.
+
+1. Parameters
+
+Parameters are compile-time values. They are evaluated before the pipeline starts running.
+
+Example:
+
+parameters:
+- name: environment
+  type: string
+  default: dev
+  values:
+  - dev
+  - test
+  - prod
+
+steps:
+- script: echo "Deploying to ${{ parameters.environment }}"
+
+Parameters are commonly used for:
+- User inputs when manually running a pipeline
+- Controlling pipeline structure
+- Template customization
+- Selecting environments or deployment options
+
+Parameters are immutable during pipeline execution.
+
+2. Variables
+
+Variables are mainly runtime values. They can be used and, in many cases, changed while the pipeline is running.
+
+Example:
+
+variables:
+  environment: dev
+  imageTag: v1.0
+
+steps:
+- script: echo "Environment: $(environment)"
+- script: echo "Image: $(imageTag)"
+
+Variables are commonly used for:
+- Configuration values
+- Environment-specific values
+- Build numbers
+- Image tags
+- URLs
+- Secrets
+
+A variable can also be created or updated during a pipeline:
+
+- bash: |
+    echo "##vso[task.setvariable variable=imageTag]v2.0"
+
+Key Differences:
+
+| Feature | Parameters | Variables |
+|---------|------------|-----------|
+| Evaluation | Compile time | Runtime |
+| Syntax | ${{ parameters.name }} | $(name) |
+| Can change during execution | No | Yes |
+| User input | Yes | Possible |
+| Control pipeline structure | Yes | Generally no |
+| Template customization | Yes | Limited |
+| Store secrets | No | Yes |
+| Typical use | Environment selection, pipeline behavior | Configuration, image tags, URLs |
+
+Example:
+
+parameters:
+- name: deployToProd
+  type: boolean
+  default: false
+
+variables:
+  imageTag: v10
+
+Parameters can control whether a stage/job is included:
+
+${{ if eq(parameters.deployToProd, true) }}:
+- stage: DeployProd
+  jobs:
+  - deployment: Deploy
+    ...
+
+Variables can store values that are used during execution:
+
+- bash: |
+    echo "##vso[task.setvariable variable=imageTag]v11"
+
+Interview Answer:
+
+"Parameters are compile-time inputs used mainly to control pipeline structure, template behavior, and user selections. Variables are runtime values used for configuration and data during pipeline execution. Parameters use the ${{ }} syntax and are immutable during a run, whereas variables typically use the $( ) syntax and can be updated during execution."
+
+Easy way to remember:
+
+Parameter = Decide before the pipeline runs.
+Variable = Value used or changed while the pipeline runs.
+
 
 ### 46. Explain macro, template and runtime expression syntax.
 
