@@ -466,9 +466,8 @@ job executes.
 
 ### 42. What is the difference between job and deployment job?
 
-A normal `job` executes steps on an agent. A `deployment` job targets an
-Azure DevOps Environment and provides deployment history plus deployment
-strategies such as `runOnce`, `rolling` or `canary` where supported.
+A regular job is used to execute a collection of tasks on an agent, typically for build, test, or other automation activities. 
+A deployment job is specifically designed for deploying applications to an Azure DevOps Environment and provides deployment-specific capabilities such as approvals, checks, deployment history, and strategies like runOnce, rolling, and canary.
 
 ### 43. What are YAML templates?
 
