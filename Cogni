@@ -1,0 +1,29 @@
+# Senior GCP DevOps Engineer Interview Questions
+
+## Terraform and GCP Networking
+
+1. **Hands-on Terraform exercise.** Write Terraform code live to create five VPC networks in a single GCP project. How would you make the network names configurable and avoid duplicating resource blocks?
+2. **Private VM connectivity.** How can a Compute Engine VM without a public IP reach resources in the same VPC, other VPCs, Google APIs, and the public internet? What would you configure for each destination?
+3. **Multi-cloud and multi-environment Terraform.** How have you structured a Terraform codebase to manage multiple clouds and environments such as dev, staging, and production? How did you organize reusable modules, provider configurations, remote state, and CI/CD approvals?
+
+## Git
+
+4. **Merge versus rebase.** What is the difference between `git merge` and `git rebase`? How does each affect commit history, and when would you use each in a shared repository?
+5. **Cherry-pick.** What does `git cherry-pick` do? Describe a scenario where you would use it to bring a specific fix into a release branch. How would you handle conflicts?
+
+## Monitoring and Observability
+
+6. **Automating production monitoring for Pega.** How would you collect logs, metrics, or job execution results from a production Pega application and automate monitoring and alerting? Which failures would you alert on, and how would you verify the alerts work?
+7. **Dynatrace implementation.** How have you implemented Dynatrace in a project? What did you instrument, how did you deploy the integration, and how did you use the resulting telemetry to troubleshoot a production issue?
+
+## Kubernetes, Deployment Strategies, and Helm
+
+8. **Deployment strategies.** Which deployment strategies have you used in production? Compare blue-green and rolling deployments in terms of traffic switching, infrastructure capacity, and rollback.
+9. **Zero-downtime Kubernetes deployments.** Walk me through how you would roll out a new application version in Kubernetes without interrupting traffic. How would you configure readiness probes, rollout settings, and graceful shutdown? How would you verify availability and decide whether to roll back?
+10. **Airflow workload isolation.** Assume data engineers should be able to submit and run jobs through Airflow, while only the platform team can deploy directly to Kubernetes. How would you design permissions for data engineers and Airflow’s service account, and restrict where and how Airflow can launch workloads?
+11. **Helm implementation.** Describe a project where you used Helm to deploy applications to Kubernetes. How did you structure the charts, manage environment-specific values, and handle upgrades and rollbacks?
+
+## CI/CD and Automation
+
+12. **Migrating Jenkins jobs to Harness.** How would you migrate an existing portfolio of Jenkins jobs to Harness? How would you inventory jobs and dependencies, migrate credentials and approvals, validate pipeline parity, and plan cutover and rollback?
+13. **Tracing Ansible failures back to Jenkins.** When an Ansible playbook launched by Jenkins fails, how do you ensure Jenkins reports the correct build status and exposes the failed host, task, and error? How would you correlate the Ansible execution with the Jenkins build and notify the right team?
